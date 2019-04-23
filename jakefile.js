@@ -36,7 +36,7 @@ desc("Lint javascript code");
         process.stdout.write("Linting JavaScript code:");
 
         jshint.checkFiles({
-            files:["Jakefile.js"],
+            files:["Jakefile.js","src/**/*.js"],
             options: lintOption(),
             globals:lintGlobal(),
         },
