@@ -5,7 +5,7 @@ var semver = require("semver");
 var jshint = require("simplebuild-jshint");
 
 desc(" task description");
-    task("default",["version","lint"],function(){
+    task("default",["version","lint","run"],function(){
         console.log("Build OK ");
     });
 
@@ -22,6 +22,15 @@ desc("version");
           }
 
     });
+
+desc("Run a localhost server");
+    task("run", function(){
+        jake.exec("node node_modules/.bin/http-server src");
+        
+        console.log("Run http-server");
+    });
+
+
 desc("Lint javascript code");
     task("lint",function(){
         process.stdout.write("Linting JavaScript code:");
