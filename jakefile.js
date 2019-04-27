@@ -5,11 +5,11 @@ var semver = require("semver");
 var jshint = require("simplebuild-jshint");
 
 desc(" task description");
-    task("default",["version","lint","run"],function(){
+    task("default",function(){
         console.log("Build OK ");
     });
 
-desc("version");
+desc("version");    
     task("version",function(){
         console.log("checking node version:.");
 
@@ -25,7 +25,7 @@ desc("version");
 
 desc("Run a localhost server");
     task("run", function(){
-        jake.exec("node node_modules/.bin/http-server src");
+        //jake.exec("node node_modules/.bin/http-server src");
         
         console.log("Run http-server");
     });
