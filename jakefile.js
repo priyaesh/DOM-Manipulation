@@ -3,6 +3,9 @@
 
 var semver = require("semver");
 var jshint = require("simplebuild-jshint");
+var karma = require("simplebuild-karma");
+
+var KARMA_CONFIG = "karma.conf.js";
 
 desc(" task description");
     task("default",function(){
@@ -23,12 +26,36 @@ desc("version");
 
     });
 
+desc(" start the karma server");
+    task("karma",function(){
+        console.log("Karma starting:.");
+        karma.start({
+            configFile:KARMA_CONFIG
+        },complete,fail);
+    },{async:true});
+
+
+    
+
 desc("Run a localhost server");
     task("run", function(){
         //jake.exec("node node_modules/.bin/http-server src");
         
         console.log("Run http-server");
     });
+    
+desc("Run tests");
+    task("test",function(){
+        console.log("Testing");
+        karma.run({
+            configFile:KARMA_CONFIG,
+            expectedBrowser:[
+                "Chrome 72.0.3626 (Windows 10.0.0) is idle"
+                //"Edge 17.17134.0 (Windows 10.0.0) is idle"
+            ],
+            strict: !process.env.loose
+        },complete,fail);
+    },{async:true});
 
 
 desc("Lint javascript code");

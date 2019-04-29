@@ -1,25 +1,27 @@
 (function(){
     "use strict";
 
-    var assert = require("chai").assert;
+    var addition = require("./add.js");
 
-    var actual = add(3,4);
-    var expected =7;
+   // var assert = require("chai").assert;
 
-    assert.equal(add(3,4),7);
+    // var actual = add(3,4);
+    // var expected =7;
 
-    if(actual !== expected) throw new Error("Expected "+expected ,"actual was"+actual);
+    // assert.equal(add(3,4),7);
+
+    // if(actual !== expected) throw new Error("Expected "+expected ,"actual was"+actual);
 
     describe("Adding two numbers",function(){
          it("addition",function(){
-            assert.equal(add(3,4), 7);
+            assertEqual(addition.add(3,4), 7);
          });
 
     });
+    // function assertEqual(actual, expected){
+    //     if(actual !== expected) throw new Error("Expected "+expected ,"actual was"+actual);
+    // }
 
-    function add(a,b) {
-        return a+b;
-    }
-
+    
     
 }());
