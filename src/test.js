@@ -18,9 +18,9 @@
          });
 
     });
-    // function assertEqual(actual, expected){
-    //     if(actual !== expected) throw new Error("Expected "+expected ,"actual was"+actual);
-    // }
+    function assertEqual(actual, expected){
+        if(actual !== expected) throw new Error("Expected "+expected ,"actual was"+actual);
+    }
 
     
     
