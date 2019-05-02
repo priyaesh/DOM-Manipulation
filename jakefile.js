@@ -35,15 +35,12 @@ desc(" start the karma server");
     },{async:true});
 
 
-    
-
 desc("Run a localhost server");
     task("run", function(){
-        //jake.exec("node node_modules/.bin/http-server src");
-        
+        jake.exec("node node_modules/http-server/bin/http-server src",{ interactive: true }, complete);
         console.log("Run http-server");
     });
-    
+
 desc("Run tests");
     task("test",function(){
         console.log("Testing");
@@ -108,7 +105,5 @@ desc("Lint javascript code");
             };
         }
 
-   
-    
 
 }());

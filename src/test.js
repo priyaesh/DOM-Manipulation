@@ -16,6 +16,9 @@
          it("addition",function(){
             assertEqual(addition.add(3,4), 7);
          });
+         it("adding floating point numbers",function(){
+            assertEqual(addition.add(3.2,0.0), 3.2);
+         });
 
     });
     function assertEqual(actual, expected){
