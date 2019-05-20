@@ -7,10 +7,10 @@ var karma = require("simplebuild-karma");
 var shell = require("shelljs");
 
 var KARMA_CONFIG = "karma.conf.js";
-var DIST_DIR = "generated/dist"
+var DIST_DIR = "generated/dist";
 
-desc(" task description");
-    task("default",function(){
+desc("task description");
+    task("default",["version","test","run"], function(){
         console.log("Build OK ");
     });
 
@@ -29,20 +29,20 @@ desc("version");
     });
 
 desc("Build distribution directory");
-    task("build", [ DIST_DIR ], function() {
-    console.log("Building distribution directory");
+    task("build",[DIST_DIR],function(){
+        console.log("Building distribution directory:.");
 
-    shell.rm("-rf", DIST_DIR + "/*");
-    shell.cp("src/index.html", DIST_DIR);
+         shell.rm("-rf",DIST_DIR +"/*");
+         shell.cp("src/index.html",DIST_DIR);
 
-//     jake.exec("node node_modules/browserify/bin/cmd.js src/app.js -o "+ DIST_DIR +"/bundle.js",
-//     {interactive:true},
-//      complete 
-//      );
-// },{async:true});  
-    });
+         jake.exec("node node_modules/browserify/bin/cmd.js  src/app.js -o " + DIST_DIR + "/bundle.js",
+         {interactive:true},
+          complete 
+          );
+    },{async:true});  
+       
 
-
+directory(DIST_DIR);
 
 desc(" start the karma server");
     task("karma",function(){
@@ -52,11 +52,10 @@ desc(" start the karma server");
         },complete,fail);
     },{async:true});
 
-directory("DIST_DIR");
 
 desc("Run a localhost server");
-    task("run" , function(){
-        jake.exec("node node_modules/http-server/bin/http-server DIST_DIR",{ interactive: true }, complete);
+    task("run",["build"], function(){
+        jake.exec("node node_modules/http-server/bin/http-server "+ DIST_DIR ,{interactive:true},complete);
         console.log("Run http-server");
     });
 
@@ -64,10 +63,8 @@ desc("Run a localhost server");
 desc("Erase all generated files");
     task("clean", function(){
         console.log("Erasing generated files: .");
-       
         shell.rm("-rf","generated");
     });
-
 
 
 desc("Run tests");
