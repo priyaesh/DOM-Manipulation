@@ -2,7 +2,7 @@
     "use strict";
 
     var addition = require("./add.js");
-    var assert = require("./vendor/chai-2.1.js").assert;
+    var assert = require("./assert.js");
 
     
     describe("Adding two numbers",function(){
