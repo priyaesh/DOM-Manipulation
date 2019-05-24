@@ -1,0 +1,9 @@
+
+
+input:empty{
+    border-color: red;
+}
+/* input with value
+input:not(:empty){
+    border-color: pink;
+} */
