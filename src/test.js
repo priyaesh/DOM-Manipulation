@@ -3,23 +3,17 @@
 
    var assert = require("./assert.js");
     
-   describe("something",function(){
+   describe("Text field validator",function(){
        
-         it("something",function(){
+         it("applies 'required css class when field is empty'",function(){
 
-            var div= document.createElement("div");
+        //    var field = document.createElement("input");
+        //    field.setAttribute("type","text");
 
-            div.innerHTML = "This is an example";
+        //    example.validateTextField(field);
 
-            document.body.appendChild(div);
-
-            var p = document.createElement("p");
-            p.innerHTML = "This is embedded paragraph";
-            div.appendChild(p);
-
-            div.parentNode.removeChild(div);
-
-
+        //    var cssClass = field.getAttribute("class");
+        //    expect(cssClass).to.equal("style-required");
            
         });
       

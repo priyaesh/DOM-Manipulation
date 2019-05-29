@@ -1,24 +1,44 @@
 <html>
     <head>
         <title>DOM Testing Example</title>
-
-        <link rel="stylesheet" href="styles.css">
+        <style type="text/css">
+            .example-required {
+                background-color: pink;
+            }
+        </style>
         
     </head>
     <body>
-   
+
+            <script src="bundle.js">
+                    //function myclick(field){
+                        //alert('Hello button clicked');
+ 
+                            // var example = {};
+                        	// example.REQUIRED_FIELD_CLASS = "example-required";
+
+                            // example.validateTextField = function(field) {
+                            //     if (field.value) {
+                            //         field.removeAttribute("class");
+                            //     }
+                            //     else {
+                            //         field.setAttribute("class", example.REQUIRED_FIELD_CLASS);
+                            //     }
+                            // };
+                            // console.log("Hello World ");
+
+                    //}
+                </script>
+        
+
         <p>
             <label for="textField">Example field: </label>
             
             <input id="textField" type="text" />
+        
+            <input type="submit" value="Validate" onclick="example.validateTextField(document.getElementById('textField'));"/>
+        
         </p>
-
-        <p>
-            <input type="submit" onclick="document.getElementById('textField')"/>
-        </p>
-
-        <script src="bundle.js"></script>
-
 
     </body>
 </html>

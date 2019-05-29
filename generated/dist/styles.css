@@ -1,9 +1,17 @@
 
 
-input:empty{
-    border-color: red;
+/* .style-required {
+    input:empty{
+    background-color: pink;
+    }
 }
-/* input with value
+ */
+
+input:empty{
+    background-color: pink;
+}
+
+
 input:not(:empty){
-    border-color: pink;
-} */
+    background-color:white
+}   
