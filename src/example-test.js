@@ -21,14 +21,14 @@
 		});
 
         
-		// it("removes 'required' CSS class when field is not empty", function() {
-		// 	field.setAttribute("class", example.REQUIRED_FIELD_CLASS);
-		// 	field.value = "not empty";
+		it("removes 'required' CSS class when field is not empty", function() {
+			field.setAttribute("class", example.REQUIRED_FIELD_CLASS);
+			field.value = "not empty";
 
-		// 	example.validateTextField(field);
-        //     // expect(cssClass()).to.equal(null);
-        //     assert.isNull(cssClass());
-		// });
+			example.validateTextField(field);
+            // expect(cssClass()).to.equal(null);
+            assert.isNull(cssClass());
+		});
 
 		// // TODO: should preserve existing CSS classes
 
