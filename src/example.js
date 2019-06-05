@@ -1,7 +1,6 @@
 // Copyright (c) 2012 Titanium I.T. LLC. All rights reserved. See LICENSE.txt for details.
 
 var example = {};
-module.exports = example;
 (function() {
 	"use strict";
 
@@ -20,3 +19,4 @@ module.exports = example;
 	
 
 }());
+module.exports = example;

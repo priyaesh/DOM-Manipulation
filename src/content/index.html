@@ -1,44 +1,33 @@
 <html>
-    <head>
-        <title>DOM Testing Example</title>
-        <style type="text/css">
-            .example-required {
-                background-color: pink;
-            }
-        </style>
-        
-    </head>
-    <body>
+        <head>
+                <title>Validate Example</title>
+            <script>
+                //var validate = require("validate");
+                function checkNotEmpty(firstName){
+                    console.log("FirstName is "+firstName);
+                    
+                    var lengthTexBox = firstName.getAttribute("value").length;
+                    console.log("FirstName length "+lengthTexBox);
 
-            <script src="bundle.js">
-                    //function myclick(field){
-                        //alert('Hello button clicked');
- 
-                            // var example = {};
-                        	// example.REQUIRED_FIELD_CLASS = "example-required";
+                    // firstName.length;
 
-                            // example.validateTextField = function(field) {
-                            //     if (field.value) {
-                            //         field.removeAttribute("class");
-                            //     }
-                            //     else {
-                            //         field.setAttribute("class", example.REQUIRED_FIELD_CLASS);
-                            //     }
-                            // };
-                            // console.log("Hello World ");
+                    if(lengthTexBox!==0){
+                        //alert("welcome")
+                        return true;
+                    }
+                    //alert("you should give name");
+                    return false;
+                    
+                }
 
-                    //}
-                </script>
-        
-
-        <p>
-            <label for="textField">Example field: </label>
-            
-            <input id="textField" type="text" />
-        
-            <input type="submit" value="Validate" onclick="example.validateTextField(document.getElementById('textField'));"/>
-        
-        </p>
-
-    </body>
+            </script>
+        </head>
+    
+        <body>
+            Name: <input type="text" id="myText">
+            <button onclick="checkNotEmpty(document.getElementById('myText'))">
+                Try it</button>    
+        </body>
+    
+    
 </html>

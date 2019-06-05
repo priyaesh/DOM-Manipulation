@@ -6,5 +6,5 @@
     
     console.log("Hello World");
     console.log("42+13 =" +addition.add(42, 13));
-
+    console.log("-7"+addition.checkNegative(-7));
 }());
